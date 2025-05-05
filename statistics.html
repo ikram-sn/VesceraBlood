@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blood Donor Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #FFEAED;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 70px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .nav-right, .nav-left {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-left {
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav-item {
+      color: #171717;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 10px 20px;
+    }
+
+    .login {
+      background: #FB7185;
+      color: #ffffff;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+
+    .login:hover {
+      background: #f95d75;
+    }
+
+    .donor-table-container {
+      margin: 40px auto;
+      width: 90%;
+      background: rgba(255, 255, 255, 0.88);
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    th, td {
+      padding: 15px;
+      font-size: 18px;
+      color: #1E1E1E;
+      font-weight: 600;
+      border-bottom: 1px solid #ccc;
+    }
+
+    td.count {
+      color: #7B7B7B;
+    }
+
+    .nav-item a {
+      text-decoration: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="nav-left">
+      <a href="vesc.html">
+        <div class="nav-item">Home</div>
+      </a>
+      <a href="statistics.html">
+        <div class="nav-item">Statistics</div>
+      </a>
+      <a href="support.html">
+        <div class="nav-item">Support Us</div>
+      </a>
+    </div>
+    <div class="nav-right">
+      <a href="Register.html">
+        <div class="nav-item">Register</div>
+      </a>
+      <a href="login.html">
+        <div class="nav-item login">Login</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="donor-table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Blood Type</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody id="donorTableBody">
+        <!-- البيانات هتتعبأ ديناميكيًا -->
+      </tbody>
+      <tfoot>
+        <tr>
+          <td><strong>Total Donors</strong></td>
+          <td id="totalDonors" class="count"></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <script>
+    async function fetchDonorStats() {
+      try {
+        const response = await fetch('http://localhost:4000/blood-inventory');
+        const stats = await response.json();
+        const tbody = document.getElementById('donorTableBody');
+        let total = 0;
+
+        stats.forEach(item => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${item.blood_type}</td>
+            <td class="count">${item.units_added}</td>
+          `;
+          tbody.appendChild(row);
+          total += item.units_added;
+        });
+
+        document.getElementById('totalDonors').textContent = total;
+      } catch (error) {
+        console.error('Error fetching stats:', error);
+        alert('خطأ في جلب الإحصائيات');
+      }
+    }
+
+    fetchDonorStats();
+  </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #FFE6F3;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 70px;
+    }
+
+    .nav-right, .nav-left {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-left {
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav-item {
+      color: #171717;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 10px 20px;
+    }
+
+    .login {
+      background: #FB7185;
+      color: #ffffff;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+    .container {
+      width: 1280px;
+      height: 832px;
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .card {
+      position: absolute;
+      width: 581px;
+      height: 478px;
+      top: 194px;
+      left: 371px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 16px;
+    }
+
+    .card-title {
+      position: absolute;
+      top: 226px;
+      left: 617px;
+      font-size: 24px;
+      font-weight: 600;
+      color: #303030;
+    }
+
+    .input-group {
+      position: absolute;
+      left: 414px;
+      width: 592px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-label {
+      font-size: 16px;
+      font-weight: 500;
+      color: #303030;
+      margin-bottom: 8px;
+    }
+
+    .input-box {
+      width: 500px;
+      height: 46px;
+      background: #FFF0F8;
+      border: 1px solid #FF0028;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+    }
+
+    .input-box input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .username-group {
+      top: 290px;
+    }
+
+    .password-group {
+      top: 388px;
+    }
+
+    .forgot {
+      font-size: 16px;
+      color: rgba(49, 49, 49, 0.69);
+      font-weight: 500;
+      margin-top: 10px;
+    }
+
+    .login-button {
+      position: absolute;
+      top: 531px;
+      left: 414px;
+      width: 500px;
+      height: 46px;
+      background: #FF0028;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .register-text {
+      position: absolute;
+      top: 601px;
+      left: 549px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #303030;
+    }
+
+    .register-text span {
+      color: #FB7185;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .nav-item a {
+      text-decoration: none;
+    }
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="nav-left">
+      <a href="vesc.html">
+        <div class="nav-item">Home</div>
+      </a>
+      <a href="statistics.html">
+        <div class="nav-item">Statistics</div>
+      </a>
+      <a href="support.html">
+        <div class="nav-item">Support Us</div>
+      </a>
+    </div>
+    <div class="nav-right">
+      <a href="Register.html">
+        <div class="nav-item">Register</div>
+      </a>
+      <a href="login.html">
+        <div class="nav-item login">Login</div>
+      </a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="card"></div>
+    <div class="card-title">Login</div>
+
+    <div class="input-group username-group">
+      <div class="input-label">Email</div>
+      <div class="input-box">
+        <input type="text" id="email" placeholder="Enter username">
+      </div>
+    </div>
+
+    <div class="input-group password-group">
+      <div class="input-label">Password</div>
+      <div class="input-box">
+        <input type="password" id="password" placeholder="Enter password">
+      </div>
+    </div>
+
+    <div class="login-button" onclick="login()">Login</div>
+
+    <div class="register-text">
+      You don’t have an account? <a href="Register.html"><span>Register</span></a>
+    </div>
+
+    <script>
+      async function login() {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        try {
+          const response = await fetch('http://localhost:4000/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+          });
+          const data = await response.json();
+          console.log(data)
+          if (response.ok) {  
+            /*alert(`مرحبًا ${data.username}! رقم المتبرع: ${data.donor_id}`);*/
+            window.location.href = 'thanks.html'; // توجيه لـ thanks.html
+          } else {
+            alert(data.error || 'خطأ في تسجيل الدخول');
+          }
+        } catch (error) {
+          alert('خطأ في الاتصال بالسيرفر');
+        }
+      }
+    </script>
+  </div>
+</body>
+</html>

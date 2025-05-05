@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #FFE6F3;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 70px;
+        }
+
+        .nav-right, .nav-left {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-left {
+            flex: 1;
+            justify-content: center;
+        }
+
+        .nav-item {
+            color: #171717;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+
+        .login {
+            background: #FB7185;
+            color: #ffffff;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+        
+        .login-btn:hover {
+            background: #f95d75;
+        }
+        
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+        }
+        
+        .form-container {
+            width: 100%;
+            max-width: 700px;
+            background: #FFF0F8;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .form-title {
+            font-size: 22px;
+            font-weight: 500;
+            color: #171717;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .form-group.small {
+            flex: 0 0 150px;
+        }
+        
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        input, select {
+            width: 100%;
+            height: 40px;
+            background: #FFF0F8;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 0, 0, 0.4);
+            color: #171717;
+            padding: 0 12px;
+            font-family: 'Poppins', sans-serif;
+            transition: border 0.3s;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #FB7185;
+        }
+        
+        .register-btn {
+            width: 100%;
+            height: 45px;
+            background: #ff0026;
+            border-radius: 8px;
+            border: none;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: background 0.3s;
+            font-family: 'Poppins';
+        }
+        
+        .register-btn:hover {
+            background: #f95d75;
+        }
+        
+        .login-link {
+            font-size: 13px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .login-link a {
+            color: #FB7185;
+            text-decoration: underline;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .login-link a:hover {
+            color: #f95d75;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .nav-left, .nav-right {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .form-group.small {
+                flex: 1;
+                width: 100%;
+            }
+            
+            .form-container {
+                padding: 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-left, .nav-right {
+                flex-wrap: wrap;
+            }
+            
+            .nav-item {
+                font-size: 13px;
+                padding: 5px 8px;
+            }
+            
+            .login-btn {
+                padding: 6px 15px;
+                font-size: 13px;
+            }
+        }
+        .nav-item a {
+            text-decoration: none;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="vesc.html"><div class="nav-item">Home</div></a>
+            <a href="statistics.html"><div class="nav-item">Statistics</div></a>
+            <a href="support.html"><div class="nav-item">Support Us</div></a>
+        </div>
+        <div class="nav-right">
+            <a href="Register.html"><div class="nav-item">Register</div></a>
+            <a href="login.html"><div class="nav-item login">Login</div></a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="form-container">
+            <h2 class="form-title">Create a new account</h2>
+            <form id="registerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm password</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="blood-type">Blood type</label>
+                        <select id="blood-type" name="blood-type" required>
+                            <option value="">Select</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group small">
+                        <label for="donate">Donate</label>
+                        <select id="donate" name="donate" required>
+                            <option value="">Select</option>
+                            <option value="Blood">Blood</option>
+                            <option value="Platelets">Platelets</option>
+                        </select>
+                    </div>
+                    <div class="form-group small">
+                        <label for="district">District</label>
+                        <select id="district" name="district" required>
+                            <option value="">Select</option>
+                            <option value="Biskra">Biskra</option>
+                            <option value="Zeribet El Oued">Zeribet El Oued</option>
+                            <option value="Tolga">Tolga</option>
+                            <option value="Ourlal">Ourlal</option>
+                            <option value="Djemourah">Djemourah</option>
+                            <option value="El Outaya">El Outaya</option>
+                            <option value="El Kantara">El Kantara</option>
+                            <option value="Foughala">Foughala</option>
+                            <option value="Sidi Okba">Sidi Okba</option>
+                            <option value="Mechouneche">Mechouneche</option>
+                        </select>
+                    </div>
+                    <div class="form-group small">
+                        <label for="commune">Commune</label>
+                        <input type="text" id="commune" name="commune" required>
+                    </div>
+                </div>
+                <button type="submit" class="register-btn">Register</button>
+                <div class="login-link">
+                    Already have an account? <a href="login.html">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // Form submit handler
+        document.getElementById('registerForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // جلب البيانات من الفورم
+            const username = document.getElementById('username').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const blood_type = document.getElementById('blood-type').value;
+            const donation_type = document.getElementById('donate').value;
+            const district = document.getElementById('district').value;
+            const commune = document.getElementById('commune').value;
+
+            // التحقق من تطابق كلمة السر
+            if (password !== confirmPassword) {
+                alert('كلمة السر وتأكيدها غير متطابقتين!');
+                return;
+            }
+
+            // إعداد البيانات للإرسال
+            const donorData = {
+                username,
+                phone,
+                email,
+                password,
+                blood_type,
+                donation_type,
+                district,
+                commune
+            };
+
+            try {
+                const response = await fetch('http://localhost:4000/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(donorData)
+                });
+                const data = await response.json();
+                if (response.ok) {
+                   /* alert(`تم التسجيل بنجاح! رقم المتبرع: ${data.donor_id}`);*/
+                   window.location.href =' thanks.html'
+                } else {
+                    alert(data.error || 'خطأ في التسجيل');
+                }
+            } catch (error) {
+                console.error('Error registering donor:', error);
+                alert('خطأ في الاتصال بالسيرفر');
+            }
+        });
+    </script>
+</body>
+</html>

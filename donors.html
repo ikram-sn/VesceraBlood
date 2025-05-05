@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donors List</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      background: #ffe6f3;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 70px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .nav-right,
+    .nav-left {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-left {
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav-item {
+      color: #171717;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 10px 20px;
+    }
+
+    .login {
+      background: #fb7185;
+      color: #ffffff;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+
+    .login:hover {
+      background: #f95d75;
+    }
+
+    .nav-item a, a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .table-wrapper {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      font-size: 16px;
+      color: #1e1e1e;
+    }
+
+    th {
+      background: #f8c5d6;
+      font-weight: 600;
+    }
+
+    td {
+      color: rgba(49, 49, 49, 0.69);
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+      }
+      .nav-left {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="nav-left">
+      <a href="vesc.html"><div class="nav-item">Home</div></a>
+      <a href="statistics.html"><div class="nav-item">Statistics</div></a>
+      <a href="support.html"><div class="nav-item">Support Us</div></a>
+    </div>
+    <div class="nav-right">
+      <a href="Register.html"><div class="nav-item">Register</div></a>
+      <a href="login.html"><div class="nav-item login">Login</div></a>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Blood Type</th>
+          <th>Donation Type</th>
+          <th>District</th>
+          <th>Commune</th>
+          <th>Registration Date</th>
+        </tr>
+      </thead>
+      <tbody id="donorsTableBody"></tbody>
+    </table>
+  </div>
+
+  <script>
+    async function fetchDonors() {
+      try {
+        const response = await fetch('http://localhost:4000/donors');
+        const donors = await response.json();
+        const tbody = document.getElementById('donorsTableBody');
+
+        donors.forEach(donor => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${donor.username}</td>
+            <td>${donor.phone}</td>
+            <td>${donor.email}</td>
+            <td>${donor.blood_type}</td>
+            <td>${donor.donation_type || 'N/A'}</td>
+            <td>${donor.district || 'N/A'}</td>
+            <td>${donor.commune || 'N/A'}</td>
+            <td>${new Date(donor.created_at).toLocaleDateString()}</td>
+          `;
+          tbody.appendChild(row);
+        });
+      } catch (error) {
+        console.error('Error fetching donors:', error);
+        alert('خطأ في جلب المتبرعين');
+      }
+    }
+
+    window.onload = fetchDonors;
+  </script>
+</body>
+</html>

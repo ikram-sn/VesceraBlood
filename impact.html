@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blood Types Info</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 70px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .nav-right, .nav-left {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+    .nav-left {
+      flex: 1;
+      justify-content: center;
+    }
+    .nav-item {
+      color: #171717;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 10px 20px;
+    }
+    .login {
+      background: #FB7185;
+      color: #ffffff;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+    .login:hover {
+      background: #f95d75;
+    }
+
+    .main {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .main h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #1E1E1E;
+      margin-bottom: 40px;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+    .blood-type {
+      display: flex;
+      align-items: center;
+      gap: 35px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .blood-type.reverse {
+      flex-direction: row-reverse;
+    }
+    .blood-text {
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 17px;
+      text-align: left;
+    }
+    .blood-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #1E1E1E;
+    }
+    .blood-desc {
+      font-size: 16px;
+      font-weight: 500;
+      color: #1E1E1E;
+    }
+    .highlight {
+      color: #FF0028;
+    }
+    img {
+      object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .main {
+        padding: 20px;
+      }
+      .blood-type {
+        flex-direction: column !important;
+        align-items: center;
+      }
+      .blood-text {
+        text-align: center;
+      }
+    }
+    .nav-item a {
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+}
+  </style>
+</head>
+<body>
+
+   <!-- Navbar -->
+   <div class="navbar">
+    <div class="nav-left">
+      <a href="vesc.html">
+      <div class="nav-item">Home</div>
+      </a>
+      <a href="statistics.html">
+      <div class="nav-item">Statistics</div>
+      </a>
+      <a href="support.html">
+      <div class="nav-item">Support Us</div>
+      </a>
+    </div>
+    <div class="nav-right">
+      <a href="Register.html">
+      <div class="nav-item">Register</div>
+      </a>
+      <a href="login.html">
+      <div class="nav-item login">Login</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="main">
+    <h1>
+      Maximize your <span style="color: #E11D48;">Impact</span> by targeting your blood type
+    </h1>
+
+    <div class="content">
+      <div class="blood-type">
+        <img src="o-.jpg" alt="O-" width="182" height="180" />
+        <div class="blood-text">
+          <div class="blood-title">O-</div>
+          <div class="blood-desc">
+            As an O- blood donor, you are <span class="highlight">the universal red cell donor</span>. Your red blood cells can be transfused to any patient. However, only 7% of people have this type.
+          </div>
+        </div>
+      </div>
+
+      <div class="blood-type reverse">
+        <img src="o+.jpg" alt="O+" width="143" height="139" />
+        <div class="blood-text">
+          <div class="blood-title">O+</div>
+          <div class="blood-desc">
+            Type O+ is the most common and needed. Your blood works for any positive blood type. <span class="highlight">38%</span> of people have it.
+          </div>
+        </div>
+      </div>
+
+      <div class="blood-type">
+        <img src="a+.jpg" alt="A+" width="156" height="163" />
+        <div class="blood-text">
+          <div class="blood-title">A+</div>
+          <div class="blood-desc">
+            Type A+ is the second most common type. <span class="highlight">34%</span> of people have it. Your platelets are very useful.
+          </div>
+        </div>
+      </div>
+
+      <div class="blood-type reverse">
+        <img src="a-.jpg" alt="A-" width="148" height="147" />
+        <div class="blood-text">
+          <div class="blood-title">A-</div>
+          <div class="blood-desc">
+            A- is rare. Only <span class="highlight">6%</span> have it. You can donate to anyone with A or AB blood, positive or negative.
+          </div>
+        </div>
+      </div>
+
+      <div class="blood-type">
+        <img src="b+.jpg" alt="B+" width="140" height="140" />
+        <div class="blood-text">
+          <div class="blood-title">B+</div>
+          <div class="blood-desc">
+            Type B+ can donate blood to other positive types and is found in <span class="highlight">8%</span> of the population.
+          </div>
+        </div>
+      </div>
+
+      <div class="blood-type reverse">
+        <img src="b-.jpg" alt="B-" width="150" height="150" />
+        <div class="blood-text">
+          <div class="blood-title">B-</div>
+          <div class="blood-desc">
+            B- is rare, but it's needed. Only <span class="highlight">2%</span> of people have it, and it can be used for all negative blood types.
+          </div>
+        </div>
+      </div>
+
+      <div class="blood-type">
+        <img src="ab+.jpg" alt="AB+" width="160" height="160" />
+        <div class="blood-text">
+          <div class="blood-title">AB+</div>
+          <div class="blood-desc">
+            AB+ is the universal plasma donor, but only <span class="highlight">3%</span> of people have it. You can donate plasma to anyone.
+          </div>
+        </div>
+      </div>
+
+      <div class="blood-type reverse">
+        <img src="ab.jpg" alt="AB-" width="150" height="150" />
+        <div class="blood-text">
+          <div class="blood-title">AB-</div>
+          <div class="blood-desc">
+            AB- is rare and important. Only <span class="highlight">1%</span> of people have it, and it can be used for all negative blood types.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
