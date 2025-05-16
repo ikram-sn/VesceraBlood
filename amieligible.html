@@ -1,142 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Blood Donation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-  <style> .navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 70px;
-  }
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #fffafa;
+    }
 
-  .nav-right, .nav-left {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-  }
+    .container {
+      width: 1280px;
+      height: 1744px;
+      position: relative;
+      overflow: hidden;
+      margin: auto;
+    }
 
-  .nav-left {
-    flex: 1;
-    justify-content: center;
-  }
+    .top-row {
+      width: 813px;
+      left: 436px;
+      top: 24px;
+      position: absolute;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-  .nav-item {
-    color: #000000;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 10px 20px;
-  }
+    .top-row-inner {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 38px;
+    }
 
-  .login {
-    background: #FB7185;
-    color: #ffffff;
-    border-radius: 12px;
-    font-weight: 500;
-  }
-  .nav-item a {
-  text-decoration: none;
-}
-a {
-  text-decoration: none;
-}
+    .logo-area {
+      width: 67px;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .title-section {
+      width: 1169px;
+      left: 61px;
+      top: 166px;
+      position: absolute;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 17px;
+    }
+
+    .title-text {
+      align-self: stretch;
+      height: 38px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      color: #1E1E1E;
+    }
+
+    .title-text.red {
+      color: #FF0028;
+    }
+
+    .subtitle-text {
+      align-self: stretch;
+      height: 169px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+      color: #1E1E1E;
+    }
+
+    .subtitle-text.underline {
+      text-decoration: underline;
+    }
+
+    .section {
+      left: 81px;
+      position: absolute;
+      display: inline-flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 35px;
+      width: auto;
+    }
+
+    .whole-blood {
+      top: 379px;
+    }
+
+    .double-red {
+      top: 856px;
+    }
+
+    .platelets {
+      top: 1332px;
+    }
+
+    .text-block {
+      width: 727px;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 17px;
+    }
+
+    .section-title {
+      align-self: stretch;
+      height: 52px;
+      color: #1E1E1E;
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    .section-text {
+      align-self: stretch;
+      height: 269px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #1E1E1E;
+    }
+
+    .section-text.underline {
+      text-decoration: underline;
+    }
+
+    .section-text.red {
+      color: #FF0028;
+      font-weight: 500;
+    }
+
+    .section-text.bold {
+      font-weight: 600;
+    }
+
+    .section-text br {
+      line-height: 1.4;
+    }
+
+    .image-style {
+      width: 376px;
+      height: 376px;
+      border-radius: 8px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 70px;
+    }
+
+    .nav-right, .nav-left {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-left {
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav-item {
+      color: #000000;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 10px 20px;
+    }
+
+    .login {
+      background: #FB7185;
+      color: #ffffff;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+
+    .nav-item a {
+      text-decoration: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
   </style>
 </head>
+<body>
   <!-- Navbar -->
   <div class="navbar">
     <div class="nav-left">
       <a href="vesc.html">
-      <div class="nav-item">Home</div>
+        <div class="nav-item">Home</div>
       </a>
       <a href="statistics.html">
-      <div class="nav-item">Statistics</div>
+        <div class="nav-item">Statistics</div>
       </a>
       <a href="support.html">
-      <div class="nav-item">Support Us</div>
+        <div class="nav-item">Support Us</div>
       </a>
     </div>
     <div class="nav-right">
       <a href="Register.html">
-      <div class="nav-item">Register</div>
+        <div class="nav-item">Register</div>
       </a>
       <a href="login.html">
-      <div class="nav-item login">Login</div>
+        <div class="nav-item login">Login</div>
       </a>
     </div>
   </div>
-<body style="margin: 0; padding: 0; font-family: 'Poppins', sans-serif; background: #fffafa;">
-  <div style="width: 1280px; height: 1744px; position: relative; overflow: hidden; margin: auto;">
-    <div style="width: 813px; left: 436px; top: 24px; position: absolute; display: inline-flex; justify-content: space-between; align-items: center;">
-      <div style="display: flex; justify-content: flex-start; align-items: center; gap: 38px;">
-        <div style="width: 67px; padding: 10px; display: flex; justify-content: center; align-items: center; gap: 10px;">
+
+  <div class="container">
+    <div class="top-row">
+      <div class="top-row-inner">
+        <div class="logo-area">
           <!-- Empty or add logo/image here -->
         </div>
       </div>
     </div>
 
-    <div style="width: 1169px; left: 61px; top: 166px; position: absolute; display: inline-flex; flex-direction: column; justify-content: flex-start; align-items: center; gap: 17px;">
-      <div style="align-self: stretch; height: 38px; text-align: center;">
-        <span style="color: #1E1E1E; font-size: 24px; font-weight: 600;">Can I Donate </span>
-        <span style="color: #FF0028; font-size: 24px; font-weight: 600;">Blood</span>
-        <span style="color: #1E1E1E; font-size: 24px; font-weight: 600;">?</span>
+    <div class="title-section">
+      <div class="title-text">
+        Can I Donate <span class="red">Blood</span>?
       </div>
-      <div style="align-self: stretch; height: 169px; text-align: center;">
-        <span style="color: #1E1E1E; font-size: 16px; font-weight: 500;">
-          To prioritize the safety and well-being of donors and patients, there are blood donation requirements that donors must meet based on their intended donation method. You must be in good health at the time you donate, and can't donate if you have a cold, flu, sore throat, cold sore, stomach bug, or any other infection. Learn more about other eligibility criteria below, along with how 
-        </span>
-        <span style="color: #1E1E1E; font-size: 16px; font-weight: 500; text-decoration: underline;">iron and hemoglobin levels</span>
-        <span style="color: #1E1E1E; font-size: 16px; font-weight: 500;"> affect your donation eligibility.</span>
+      <div class="subtitle-text">
+        To prioritize the safety and well-being of donors and patients, there are blood donation requirements that donors must meet based on their intended donation method. You must be in good health at the time you donate, and can't donate if you have a cold, flu, sore throat, cold sore, stomach bug, or any other infection. Learn more about other eligibility criteria below, along with how
+        <span class="subtitle-text underline">iron and hemoglobin levels</span> affect your donation eligibility.
       </div>
     </div>
 
-    <div style="left: 81px; top: 379px; position: absolute; display: inline-flex; justify-content: flex-start; align-items: center; gap: 35px;">
-      <div style="width: 727px; display: inline-flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 17px;">
-        <div style="align-self: stretch; height: 52px; color: #1E1E1E; font-size: 36px; font-weight: 700;">Whole Blood</div>
-        <div style="align-self: stretch; height: 269px;">
-          <span style="color: #1E1E1E; font-size: 16px; font-weight: 500; text-decoration: underline;">Whole blood donation</span>
-          <span style="color: #1E1E1E; font-size: 16px; font-weight: 500;"> is the method that individuals are most familiar with. This process collects a pint of blood containing </span>
-          <span style="color: #FF0028; font-size: 16px; font-weight: 500;">red blood cells, white blood cells, platelets, and plasma</span>
-          <span style="color: #1E1E1E; font-size: 16px; font-weight: 500;"> in a single session.<br/></span>
-          <span style="color: #1E1E1E; font-size: 16px; font-weight: 600;">Age and Weight Requirements</span><br/>
-          <span style="color: #1E1E1E; font-size: 16px; font-weight: 500;">You must be at least 16 years old to donate blood.<br/></span>
-          <span style="color: #1E1E1E; font-size: 16px; font-weight: 600;">How Often Can I Donate Whole Blood?</span><br/>
-          <span style="color: #1E1E1E; font-size: 16px; font-weight: 500;">You can donate every 56 days for a total of 6 donations a year.</span>
+    <div class="section whole-blood">
+      <div class="text-block">
+        <div class="section-title">Whole Blood</div>
+        <div class="section-text">
+          <span class="section-text underline">Whole blood donation</span> is the method that individuals are most familiar with. This process collects a pint of blood containing
+          <span class="section-text red">red blood cells, white blood cells, platelets, and plasma</span> in a single session.<br/>
+          <span class="section-text bold">Age and Weight Requirements</span><br/>
+          You must be at least 16 years old to donate blood.<br/>
+          <span class="section-text bold">How Often Can I Donate Whole Blood?</span><br/>
+          You can donate every 56 days for a total of 6 donations a year.
         </div>
       </div>
-      <img style="width: 376px; height: 376px; border-radius: 8px;" src="pexels-photo-4531304.jpeg" />
+      <img class="image-style" src="pexels-photo-4531304.jpeg" />
     </div>
 
-    <div style="left: 81px; top: 856px; position: absolute; display: inline-flex; justify-content: flex-start; align-items: center; gap: 35px;">
-      <img style="width: 376px; height: 376px; border-radius: 8px;" src="alyx-machine-9093_teaserLeftRight.avif" />
-      <div style="width: 727px; display: inline-flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 17px;">
-        <div style="align-self: stretch; height: 52px; color: #1E1E1E; font-size: 36px; font-weight: 700;">Double Red Cells</div>
-        <div style="align-self: stretch; height: 269px;">
-          <span style="color: #1E1E1E; font-size: 16px; font-weight: 500;">A </span>
-          <span style="color: #1E1E1E; font-size: 16px; font-weight: 500; text-decoration: underline;">double red cell donation</span>
-          <span style="color: #FF0028; font-size: 16px; font-weight: 500;"> only collects red blood cells</span>
-          <span style="color: #1E1E1E; font-size: 16px; font-weight: 500;">, excluding platelets and plasma. This specialized process, known as automation or apheresis, focuses specifically on extracting red blood cells.<br/></span>
-          <span style="color: #1E1E1E; font-size: 16px; font-weight: 600;">How Often Can I Donate Double Red Cells?</span><br/>
-          <span style="color: #1E1E1E; font-size: 16px; font-weight: 500;">Every 112 days for a total of 3 donations a year.</span>
+    <div class="section double-red">
+      <img class="image-style" src="alyx-machine-9093_teaserLeftRight.avif" />
+      <div class="text-block">
+        <div class="section-title">Double Red Cells</div>
+        <div class="section-text">
+          A <span class="section-text underline">double red cell donation</span><span class="section-text red"> only collects red blood cells</span>, excluding platelets and plasma. This specialized process, known as automation or apheresis, focuses specifically on extracting red blood cells.<br/>
+          <span class="section-text bold">How Often Can I Donate Double Red Cells?</span><br/>
+          Every 112 days for a total of 3 donations a year.
         </div>
       </div>
     </div>
 
-    <div style="left: 81px; top: 1332px; position: absolute; display: inline-flex; justify-content: flex-start; align-items: center; gap: 35px;">
-      <div style="width: 727px; display: inline-flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 17px;">
-        <div style="align-self: stretch; height: 52px; color: #1E1E1E; font-size: 36px; font-weight: 700;">Platelets</div>
-        <div style="align-self: stretch; height: 269px;">
-          <span style="color: #1E1E1E; font-size: 16px; font-weight: 500;">A </span>
-          <span style="color: #1E1E1E; font-size: 16px; font-weight: 500; text-decoration: underline;">platelet donation</span>
-          <span style="color: #1E1E1E; font-size: 16px; font-weight: 500;"> only collects platelets, returning the rest to you. This specialized donation process is known as </span>
-          <span style="color: #FF0028; font-size: 16px; font-weight: 500;">automation or apheresis</span><span style="color: #1E1E1E; font-size: 16px; font-weight: 500;">.<br/></span>
-          <span style="color: #1E1E1E; font-size: 16px; font-weight: 600;">How Often Can I Donate Platelets?</span><br/>
-          <span style="color: #1E1E1E; font-size: 16px; font-weight: 500;">You can donate platelets every seven days. We recommend donating every 14 days. You can give up to 24 times a year.<br/></span>
-          <span style="color: #FF0028; font-size: 16px; font-weight: 500;">Do not take aspirin or any products containing aspirin for at least two full calendar days before your appointment.</span>
+    <div class="section platelets">
+      <div class="text-block">
+        <div class="section-title">Platelets</div>
+        <div class="section-text">
+          A <span class="section-text underline">platelet donation</span> only collects platelets, returning the rest to you. This specialized donation process is known as
+          <span class="section-text red"> automation or apheresis</span>.<br/>
+          <span class="section-text bold">How Often Can I Donate Platelets?</span><br/>
+          You can donate platelets every seven days. We recommend donating every 14 days. You can give up to 24 times a year.<br/>
+          <span class="section-text red">Do not take aspirin or any products containing aspirin for at least two full calendar days before your appointment.</span>
         </div>
       </div>
-      <img style="width: 376px; height: 376px; border-radius: 8px;" src="platelet-machine-8242-1920px_teaserLeftRight.avif" />
+      <img class="image-style" src="platelet-machine-8242-1920px_teaserLeftRight.avif" />
     </div>
-
   </div>
 </body>
 </html>
